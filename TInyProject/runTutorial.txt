@@ -1,0 +1,2 @@
+javac Application/Shapes/*.java Application/Main.java
+java Application.Main
