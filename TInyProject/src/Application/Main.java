@@ -5,6 +5,7 @@ import Application.Shapes.Square;
 import Application.Shapes.Trapezium;
 
 
+
 public class Main {
     public static void main(String[] args) {
         Circle c1 = new Circle(5);
@@ -19,5 +20,6 @@ public class Main {
 
         Trapezium t1 = new Trapezium(15);
         System.out.println("Trapezium's immediate parent: " + t1.immediateParent());
+        t1.getColour();
     }
 }
