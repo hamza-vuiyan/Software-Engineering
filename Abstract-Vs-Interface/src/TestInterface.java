@@ -41,8 +41,10 @@ public class TestInterface {
         tea.bringWater();
         tea.boilWater();
         tea.addTeaBag();
+
         tea.setSugarAmount(2);
         tea.addSugar();
+
         tea.serveTea();
     }
 }
