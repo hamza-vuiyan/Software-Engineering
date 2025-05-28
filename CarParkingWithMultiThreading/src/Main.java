@@ -1,4 +1,3 @@
-import java.security.PublicKey;
 import java.util.Scanner;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -84,7 +83,7 @@ class Main {
                     carQueue.addCars(booking);
 
                     try {
-                        Thread.sleep(500); // Simulate time taken to add a car
+                        Thread.sleep(500);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                     }
