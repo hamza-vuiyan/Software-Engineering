@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        // Display welcome message and menu options
         System.out.println("Welcome to my Database Application!");
         System.out.println("Select an option from the menu to proceed.");
         System.out.println("1. Add Student");
@@ -12,7 +14,7 @@ public class Main {
         System.out.println("4. Update Student");
         System.out.println("5. Show All Students");
         System.out.println("0. Exit");
-        System.out.println("Enter your choice (0-4): ");
+        System.out.println("Enter your choice (0-5): ");
         Scanner input = new Scanner(System.in);
         int choice = input.nextInt();
         input.nextLine();
@@ -40,7 +42,7 @@ public class Main {
                     System.out.println();
                     break;
                 }
-                case 4:
+                case 4:{
                     System.out.println("Enter the ID of the student to update:");
                     int studentId = input.nextInt();
                     input.nextLine();
@@ -49,6 +51,7 @@ public class Main {
                     Services.updateStudent(studentId, newName);
                     System.out.println();
                     break;
+                }
                 case 5:{
                     Services.viewAllStudents();
                     System.out.println();
@@ -72,7 +75,7 @@ public class Main {
             System.out.println("4. Update Student");
             System.out.println("5. Show All Students");
             System.out.println("0. Exit");
-            System.out.println("Enter your choice (0-4): ");
+            System.out.println("Enter your choice (0-5): ");
             choice = input.nextInt();
         }
     }

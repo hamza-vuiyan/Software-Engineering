@@ -3,17 +3,20 @@ package Application;
 import java.sql.*;
 
 public class Services {
+
+    // Database credentials
     static String url = "jdbc:mysql://urowmyrks8sa1rih:RsKRqsn19uGmkebas6WR@b3p5m8nhncgiqy1daeus-mysql.services.clever-cloud.com:3306/b3p5m8nhncgiqy1daeus";
     static String user = "urowmyrks8sa1rih";
     static String password = "RsKRqsn19uGmkebas6WR";
 
+    // SQL queries for CRUD operations
     static String insertQuery = "insert into newstudent (name) values (?)";
     static String deleteQuery = "delete from newstudent where id = ?";
     static String viewQuery = "select *from newstudent";
     static String findQuery = "select *from newstudent where id = ?";
     static String updateQuery = "update newstudent set name = ? where id = ?";
 
-
+    // Method to insert data into the database
     public static void insertData(String name){
         try (Connection connection = DriverManager.getConnection(url, user, password);
         PreparedStatement ps = connection.prepareStatement(insertQuery)) {
@@ -29,6 +32,7 @@ public class Services {
         }
     }
 
+    // Method to delete data from the database
     public static void deleteData(int id){
         try(Connection connection = DriverManager.getConnection(url, user, password);
         PreparedStatement ps = connection.prepareStatement(deleteQuery)){
@@ -44,6 +48,7 @@ public class Services {
         }
     }
 
+    // Method to view all students in the database
     public static void viewAllStudents(){
         try(Connection connection = DriverManager.getConnection(url, user, password);
         PreparedStatement ps = connection.prepareStatement(viewQuery)){
@@ -59,6 +64,7 @@ public class Services {
         }
     }
 
+    // Method to find a student by ID
     public static void findStudent(int id) {
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement ps = connection.prepareStatement(findQuery)){
@@ -75,6 +81,7 @@ public class Services {
         }
     }
 
+    // Method to update a student's name by ID
     public static void updateStudent(int id, String newName) {
         try(Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement ps = connection.prepareStatement(updateQuery)) {
