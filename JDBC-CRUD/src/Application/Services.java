@@ -5,9 +5,6 @@ import java.sql.*;
 public class Services {
 
     // Database credentials
-    static String url = "jdbc:mysql://urowmyrks8sa1rih:RsKRqsn19uGmkebas6WR@b3p5m8nhncgiqy1daeus-mysql.services.clever-cloud.com:3306/b3p5m8nhncgiqy1daeus";
-    static String user = "urowmyrks8sa1rih";
-    static String password = "RsKRqsn19uGmkebas6WR";
 
     // SQL queries for CRUD operations
     static String insertQuery = "insert into newstudent (name) values (?)";
@@ -15,6 +12,10 @@ public class Services {
     static String viewQuery = "select *from newstudent";
     static String findQuery = "select *from newstudent where id = ?";
     static String updateQuery = "update newstudent set name = ? where id = ?";
+
+    static String url = Credentials.getUrl();
+    static String user = Credentials.getUser();
+    static String password = Credentials.getPassword();
 
     // Method to insert data into the database
     public static void insertData(String name){
